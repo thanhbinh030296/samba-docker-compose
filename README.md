@@ -46,7 +46,7 @@ Noticable things: in  yaml file,
 
 ## setup wake-on-lan for using
 *please checking, install, enable, setup for wol firstly https://www.golinuxcloud.com/wake-on-lan-ubuntu/ and enable wake up on lan corresponding to its mainboard (for example, my mainboard is MSI, for example: https://www.youtube.com/watch?v=-E26oG_39-M*
-- our network mac: ***30:9c:23:25:16:78***
+- For example my network mac: ***30:9c:23:25:16:78***
 
 - **For Windows with using powershell**:
     -   use script `Wake.ps1` ( I refer [him](https://gist.github.com/alimbada/4949168))
@@ -55,3 +55,35 @@ Noticable things: in  yaml file,
     -  running command `./Wake.ps1 Address` for waking up the nas  ( or using `Wake_nas.ps1`  instead of `Wake.ps1` for short command)
         ![Alt text](wol-windows.png)
 - **For iPad**:
+    - Use App `Wolow` for set magic packet to wake on lan
+    - use `iSH`:
+        - install packages
+            > apk add openssh
+
+            > apk add sshpass
+        - write a script shutdown automatically: 
+          > vi shutdown.sh
+          - fill content:
+            ```
+            #!/bin/sh
+            sshpass -p 'naspass' ssh -t shutdown_user@192.168.1.135 "sudo powerofF"
+            ```
+          > chmod +x shutdown.sh
+    - For shutdown -> `./shutdown.sh`
+
+- **Setup on NAS Server sudoer withoutpassword for using shutdown script from ipad**
+    - TL;DR: Refer [this](https://www.tecmint.com/run-sudo-command-without-password-linux/)
+    - Brief:
+        > sudo adduser shutdown_user
+        
+        > sudo usermod -aG sudo shutdown_user
+
+        > sudo visudo 
+
+        - add the content
+        ```
+        shutdown_user ALL=(ALL) NOPASSWD: ALL
+        ```   
+        > sudo -v
+
+        Finished !!!
