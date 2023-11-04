@@ -3,13 +3,19 @@
 ## this NAS is used by a Windows machine and 2 iPads (use for watching high resolution videos)
 
 ## setup
+- check uuid of disk by command: 
+    >`sudo blkid`
 - Following the docker-compose.yaml file, I have 2 storages, one is mounted to /home/hdd1tb_1 and the else is mounted to /home/hdd1tb_2.
-
 ![Alt text](fstab-ntfs.png)
+
+- reload fstab 
+    >`sudo mount -a`
+
 - install docker engine, and run at folder which contains *docker-compose.yaml*
     > docker compose up -d
 - when service is running like below -> it is done for use
     ![Alt text](container.png)
+
 
 - setup firewall
     > sudo ufw allow 139
