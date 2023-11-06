@@ -6,13 +6,15 @@
 
 - check uuid of disk by command: 
     >`sudo blkid`
-- Following the docker-compose.yaml file, I have 2 storages, one is mounted to /home/hdd1tb_1 and the else is mounted to /home/hdd1tb_2.
+- Following the docker-compose.yaml file, I have 3 storages, they are mounted to /media/hdd1tb_1, /media/hdd1tb_2, and /media/hdd5tb_1, correctively.
+- Firstly, they have been to be mounted below
 ![Alt text](fstab-ntfs.png)
-
+the permissions of them will be like this
+![Alt text](permission.png)
 - reload fstab 
-    >`sudo mount -a`
+    >`sudo mount -a` or restart the computer
 
-- install docker engine, and run at folder which contains *docker-compose.yaml*
+- install docker engine, and run at folder `samba-docker-compose` which contains *docker-compose.yaml*
     > docker compose up -d
 - when service is running like below -> it is done for use
     ![Alt text](container.png)
