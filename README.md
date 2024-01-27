@@ -56,6 +56,17 @@ Noticable things: in  yaml file,
         ![Alt text](pwd.png)
     -  running command `./Wake.ps1 Address` for waking up the nas  ( or using `Wake_nas.ps1`  instead of `Wake.ps1` for short command)
         ![Alt text](wol-windows.png)
+- with WakeOnWAN: Please setup Port-Forward of router to the NAS, from linux -> enter the public IP of router. Can use command:
+```
+    wakeonlan -i <public-IP> -p <Port of Router which are routed to the port 9 NAS> <MAC Address> 
+    For example: 
+    waleonlan -i 1.52.98.180 -p 9 2a:4b:5c:12d:11a:12
+```
+
+- WAKE from Iphone/iPad:
+![Alt text](wolow.png)
+![Alt text](wolow-2.png)
+
 - **For iPad**:
     - Use App `Wolow` for set magic packet to wake on lan
     - use `iSH`:
