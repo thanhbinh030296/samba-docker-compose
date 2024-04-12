@@ -21,10 +21,11 @@ services:
     volumes:
       - ./smb.conf:/etc/samba/smb.conf
       - /media/hdd1tb_1:/mnt/hdd1tb_1:z
-      - /media/hdd1tb_2:/mnt/hdd1tb_2:z
+      - /media/hdd2tb_1:/mnt/hdd2tb_1:z
       - /media/hdd5tb_1:/mnt/hdd5tb_1:z
-        #command: '-s "hdd1tb_1;/mnt" -s "hdd1tb_2;/mnt2;yes;no;no;bearnas" -u "bearnas;bearnas_passwd" -p'
-    command: '-u "bearnas;bearnas_passwd" -p'
+      - /media/hdd2tb_toshiba:/mnt/hdd2tb_toshiba:z   
+        #command: '-s "hdd1tb_1;/mnt" -s "hdd2tb_1;/mnt2;yes;no;no;bearnas" -u "bearnas;aelita" -p'
+    command: '-u "bearnas;aelita" -p'
 
 networks:
   default:

@@ -146,63 +146,35 @@
    fruit:veto_appledouble = no
    fruit:wipe_intentionally_left_blank_rfork = yes
 
-
-   # optimize speed of Samba network
-   write cache size = 2097152
-   min receivefile size = 16384
-   getwd cache = true
-
-   #optimize 2
-   log level = 1 
-   #socket options = TCP_NODELAY SO_RCVBUF=65536 SO_SNDBUF=65536
-#   socket options = TCP_NODELAY IPTOS_THROUGHPUT SO_RCVBUF=131072 SO_SNDBUF=131072
-   socket options = TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=2048000 SO_SNDBUF=2048000
-   acl allow execute always = true
-   acl map full control = yes
-   deadtime = 60
-   #getwd cache = true
-   #min receivefile size = 16384
-   strict sync = no
-   sync always = no
-   use sendfile = true
-
-#getwd cache = yes
-
 [hdd1tb_1]
-   path = /mnt/hdd1tb_1
+   path = /mnt
    browsable = yes
    read only = no
    guest ok = yes
    writeable = yes
    veto files = /.apdisk/.DS_Store/.TemporaryItems/.Trashes/desktop.ini/ehthumbs.db/Network Trash Folder/Temporary Items/Thumbs.db/
    delete veto files = yes
+   valid users = bearnas
+[hdd1tb_2]
+   path = /mnt2
+   browsable = yes
+   read only = no
+   writeable = yes
+   guest ok = no
+   veto files = /.apdisk/.DS_Store/.TemporaryItems/.Trashes/desktop.ini/ehthumbs.db/Network Trash Folder/Temporary Items/Thumbs.db/
+   delete veto files = yes
+   #valid users = bearnas
    valid users = bearnas
 
-[hdd2tb_toshiba]
-   path = /mnt/hdd2tb_toshiba
-   browsable = yes
-   read only = no
-   guest ok = yes
-   writeable = yes
-   veto files = /.apdisk/.DS_Store/.TemporaryItems/.Trashes/desktop.ini/ehthumbs.db/Network Trash Folder/Temporary Items/Thumbs.db/
-   delete veto files = yes
-   valid users = bearnas
-
-[hdd2tb_1]
-   path = /mnt/hdd2tb_1
-   browsable = yes
-   read only = no
-   guest ok = yes
-   writeable = yes
-   veto files = /.apdisk/.DS_Store/.TemporaryItems/.Trashes/desktop.ini/ehthumbs.db/Network Trash Folder/Temporary Items/Thumbs.db/
-   delete veto files = yes
-   valid users = bearnas
 [hdd5tb_1]
-   path = /mnt/hdd5tb_1
+   path = /mnt3
    browsable = yes
    read only = no
-   guest ok = yes
    writeable = yes
+   guest ok = no
    veto files = /.apdisk/.DS_Store/.TemporaryItems/.Trashes/desktop.ini/ehthumbs.db/Network Trash Folder/Temporary Items/Thumbs.db/
    delete veto files = yes
+   #valid users = bearnas
    valid users = bearnas
+
+
