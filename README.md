@@ -1,6 +1,7 @@
 # Setup a linux nas server
+![Alt text](my-nas.jpg)
 ## I have set up a DIY NAS for myself. I use an old PC which uses lower TDP when running for long time used. 
-## this NAS is used by a Windows machine and 2 iPads (use for watching high resolution videos)
+## this NAS is used by a Windows machine, 1 macbook and 2 iPads (use for watching high resolution videos)
 
 ## setup for mounting disks and hosting a samba server
 
@@ -84,6 +85,7 @@ Noticable things: in  yaml file,
           > chmod +x shutdown.sh
     - For shutdown -> `./shutdown.sh`
 
+- **For MacOS**: ***update later***
 - **Setup on NAS Server sudoer withoutpassword for using shutdown script from ipad**
     - TL;DR: Refer [this](https://www.tecmint.com/run-sudo-command-without-password-linux/)
     - Brief:
