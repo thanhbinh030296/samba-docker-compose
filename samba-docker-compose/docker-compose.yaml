@@ -23,7 +23,6 @@ services:
       - /media/hdd1tb_1:/mnt/hdd1tb_1:z
       - /media/hdd2tb_1:/mnt/hdd2tb_1:z
       - /media/hdd5tb_1:/mnt/hdd5tb_1:z
-      - /media/hdd6tb_1:/mnt/hdd6tb_1:z
       - /media/hdd6tb_2:/mnt/hdd6tb_2:z
       - /media/hdd2tb_toshiba:/mnt/hdd2tb_toshiba:z   
         #command: '-s "hdd1tb_1;/mnt" -s "hdd2tb_1;/mnt2;yes;no;no;bearnas" -u "bearnas;aelita" -p'
